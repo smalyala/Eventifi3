@@ -19,7 +19,8 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 
 public class MainActivity extends FragmentActivity implements ConnectionCallbacks, OnConnectionFailedListener, OnMapReadyCallback {
@@ -31,7 +32,11 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "Vpha2WmhDUlGNClOGPGItvEvzLRvzryD5SpJolDC", "e3vCwF3bDU9NjdUB1tISyB1ZSpe83DnwSC7hhqxL");
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
     }
 
     @Override
