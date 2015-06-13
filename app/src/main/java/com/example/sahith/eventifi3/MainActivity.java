@@ -1,14 +1,17 @@
 package com.example.sahith.eventifi3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
@@ -95,5 +98,12 @@ public class MainActivity extends FragmentActivity implements ConnectionCallback
 
         }
 
+    }
+    public static final String EXTRA_MESSAGE = "message";
+
+    public void createNewEvent(View v)
+    {
+        Intent intent = new Intent(this, NewEventActivity.class);
+        startActivity(intent);
     }
 }
