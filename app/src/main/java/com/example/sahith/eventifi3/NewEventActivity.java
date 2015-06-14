@@ -5,6 +5,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 
 public class NewEventActivity extends ActionBarActivity {
@@ -12,7 +17,7 @@ public class NewEventActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_new_event);
+        setContentView(R.layout.activity_new_event);
         Intent intent = getIntent();
 
     }
@@ -40,7 +45,34 @@ public class NewEventActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void closeEventCreator(){
-        onDestroy();
+    public void closeEventCreator(View view){
+        EditText edit1 = (EditText)findViewById(R.id.nameInput);
+        String name = edit1.getText().toString();
+        EditText edit2 = (EditText)findViewById(R.id.descriptionInput);
+        String description = edit2.getText().toString();
+        EditText edit3 = (EditText)findViewById(R.id.startDateInput);
+        String startDate = edit3.getText().toString();
+        EditText edit4 = (EditText)findViewById(R.id.startTimeInput);
+        String startTime = edit4.getText().toString();
+        EditText edit5 = (EditText)findViewById(R.id.endDateInput);
+        String endDate = edit5.getText().toString();
+        EditText edit6 = (EditText)findViewById(R.id.endTimeInput);
+        String endTime = edit6.getText().toString();
+        EditText edit7 = (EditText)findViewById(R.id.capacityInput);
+        String capacity = edit7.getText().toString();
+        EditText edit8 = (EditText)findViewById(R.id.addressInput);
+        String address = edit8.getText().toString();
+        ParseObject event = new ParseObject("Event");
+        event.put("name", name);
+        event.put("description", description);
+        event.put("startDate", startDate);
+        event.put("startTime", startTime);
+        event.put("endDate", endDate);
+        event.put("endTime", endTime);
+        event.put("capacity", capacity);
+        event.put("address", address);
+        event.put("display", true);
+        event.saveInBackground();
+
     }
 }

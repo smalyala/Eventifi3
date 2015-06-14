@@ -92,6 +92,16 @@
         android:layout_alignEnd="@+id/endTimeInput"
         android:layout_alignParentStart="true" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addressInput"
+        android:hint="Address"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/capacityInput"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/endTimeInput" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,4 +110,6 @@
         android:id="@+id/createEventButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
