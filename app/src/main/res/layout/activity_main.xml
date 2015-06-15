@@ -13,14 +13,14 @@
         android:layout_height="match_parent"
         android:name="com.google.android.gms.maps.MapFragment"/>
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Event"
-        android:id="@+id/button"
+        android:id="@+id/createEventButton"
+        android:onClick="createNewEvent"
+        android:src="@mipmap/eventbutton"
         android:layout_alignBottom="@+id/map"
-        android:layout_alignEnd="@+id/map"
-        android:onClick="createNewEvent"/>
+        android:layout_alignEnd="@+id/map" />
 
 </RelativeLayout>
 

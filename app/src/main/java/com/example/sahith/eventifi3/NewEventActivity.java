@@ -73,6 +73,10 @@ public class NewEventActivity extends ActionBarActivity {
         event.put("address", address);
         event.put("display", true);
         event.saveInBackground();
+        kill_activity();
 
+    }
+    private void kill_activity(){
+        finish();
     }
 }
